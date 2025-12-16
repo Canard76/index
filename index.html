@@ -6,13 +6,14 @@
   <title>Index · Quiz Famille Tabouret</title>
   <meta name="description" content="Accès rapide aux quiz familiaux (v1 à v4) et variantes." />
   <meta name="color-scheme" content="dark light" />
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300D1B2'/><text x='50' y='60' text-anchor='middle' font-size='50' fill='white' font-family='Arial'>Q</text></svg>">
   <style>
     :root {
       --bg: #0f1216;
       --panel: #151a21;
       --text: #e6eaf0;
       --muted: #a9b1bd;
-      --primary: #00d1b2;
+      --primary: #00d1b2; /* teal */
       --primary-contrast: #07221f;
       --border: #232a33;
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -21,7 +22,7 @@
     html, body { height: 100%; }
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
       background: radial-gradient(1200px 800px at 80% -200px, #16202a 0%, var(--bg) 45%), var(--bg);
       color: var(--text);
       display: grid;
@@ -30,14 +31,14 @@
     }
     .container { width: min(880px, 100%); }
     header {
-      background: var(--panel);
+      background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0) 60%), var(--panel);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px;
+      padding: 28px 28px 18px;
       box-shadow: var(--shadow);
     }
-    h1 { margin: 0 0 6px; font-size: 2rem; }
-    .subtitle { color: var(--muted); margin-bottom: 10px; }
+    h1 { margin: 0 0 6px 0; font-size: clamp(1.4rem, 2.2vw + 1rem, 2.2rem); }
+    .subtitle { color: var(--muted); margin: 0 0 10px 0; font-size: 0.98rem; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -45,10 +46,16 @@
       margin-top: 18px;
     }
     .card {
-      background: var(--panel);
+      background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0) 60%), var(--panel);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 18px;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+      border-color: #2c3642;
     }
     .btn {
       display: inline-flex;
@@ -56,50 +63,70 @@
       justify-content: center;
       width: 100%;
       min-height: 56px;
-      padding: 14px;
+      padding: 14px 16px;
       border-radius: 12px;
-      border: 1px solid var(--primary);
-      background: var(--primary);
+      border: 1px solid color-mix(in srgb, var(--primary), white 20%);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--primary), white 12%), var(--primary));
       color: #071a17;
       font-weight: 700;
       text-decoration: none;
       font-size: 1.05rem;
+      letter-spacing: 0.2px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 10px 18px rgba(0, 209, 178, 0.15);
+      transition: filter 140ms ease, transform 140ms ease;
     }
-    .btn:hover { filter: brightness(1.1); }
-    .tag { display: block; margin-top: 10px; font-size: 0.86rem; color: var(--muted); }
+    .btn:hover { filter: brightness(1.05) saturate(1.1); transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .tag { display: inline-block; margin-top: 10px; font-size: 0.86rem; color: var(--muted); }
     footer { margin-top: 16px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f7fa;
+        --panel: #ffffff;
+        --text: #0e1318;
+        --muted: #5e6a79;
+        --border: #dfe5ec;
+      }
+      body { background: radial-gradient(1200px 800px at 80% -200px, #e9f1f9 0%, #f5f7fa 45%), var(--bg); }
+      .btn { color: var(--primary-contrast); }
+    }
   </style>
 </head>
 <body>
   <main class="container">
     <header>
       <h1>Accueil des Quiz Familiaux</h1>
-      <p class="subtitle">Sélectionnez un quiz ci-dessous.</p>
+      <p class="subtitle">Sélectionnez un quiz ci-dessous. Interface sombre, responsive, prête pour GitHub Pages.</p>
       <section class="grid">
         <article class="card">
-          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret" target="_blank">Quizz Familiale</a>
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret" target="_blank" rel="noopener noreferrer">Quizz Familiale</a>
           <span class="tag">Bouton 1 · Lien direct v1</span>
         </article>
         <article class="card">
-          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v2" target="_blank">Quizz Parent/Ado</a>
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v2" target="_blank" rel="noopener noreferrer">Quizz Parent/Ado</a>
           <span class="tag">Bouton 2 · v2</span>
         </article>
         <article class="card">
-          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v3" target="_blank">identique au 2 mais plus jolie</a>
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v3" target="_blank" rel="noopener noreferrer">identique au 2 mais plus jolie</a>
           <span class="tag">Bouton 3 · v3</span>
         </article>
         <article class="card">
-          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v4" target="_blank">QCM 40 questions avec surprise finale</a>
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v4" target="_blank" rel="noopener noreferrer">QCM 40 questions avec surprise finale</a>
           <span class="tag">Bouton 4 · v4</span>
         </article>
         <article class="card">
-          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v4b" target="_blank">Idem 4 mais "en secours" sans surprise</a>
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v4b" target="_blank" rel="noopener noreferrer">Idem 4 mais "en secours" sans surprise</a>
           <span class="tag">Bouton 5 · v4b</span>
+        </article>
+        <article class="card">
+          <a class="btn" href="https://canard76.github.io/page_01" target="_blank" rel="noopener noreferrer">Page 01</a>
+          <span class="tag">Bouton 6 · Lien additionnel</span>
         </article>
       </section>
     </header>
     <footer>
-      <p>© 2025 · Quiz Famille Tabouret · index.html</p>
+      <p>© 2025 · Quiz Famille Tabouret · <span class="mono">index.html</span></p>
     </footer>
   </main>
 </body>
