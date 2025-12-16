@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Index · Quiz Famille Tabouret</title>
+  <meta name="description" content="Accès rapide aux quiz familiaux (v1 à v4) et variantes." />
+  <meta name="color-scheme" content="dark light" />
+  <style>
+    :root {
+      --bg: #0f1216;
+      --panel: #151a21;
+      --text: #e6eaf0;
+      --muted: #a9b1bd;
+      --primary: #00d1b2;
+      --primary-contrast: #07221f;
+      --border: #232a33;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -200px, #16202a 0%, var(--bg) 45%), var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .container { width: min(880px, 100%); }
+    header {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0 0 6px; font-size: 2rem; }
+    .subtitle { color: var(--muted); margin-bottom: 10px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 56px;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--primary);
+      background: var(--primary);
+      color: #071a17;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    .tag { display: block; margin-top: 10px; font-size: 0.86rem; color: var(--muted); }
+    footer { margin-top: 16px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Accueil des Quiz Familiaux</h1>
+      <p class="subtitle">Sélectionnez un quiz ci-dessous.</p>
+      <section class="grid">
+        <article class="card">
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret" target="_blank">Quizz Familiale</a>
+          <span class="tag">Bouton 1 · Lien direct v1</span>
+        </article>
+        <article class="card">
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v2" target="_blank">Quizz Parent/Ado</a>
+          <span class="tag">Bouton 2 · v2</span>
+        </article>
+        <article class="card">
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v3" target="_blank">identique au 2 mais plus jolie</a>
+          <span class="tag">Bouton 3 · v3</span>
+        </article>
+        <article class="card">
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v4" target="_blank">QCM 40 questions avec surprise finale</a>
+          <span class="tag">Bouton 4 · v4</span>
+        </article>
+        <article class="card">
+          <a class="btn" href="https://canard76.github.io/quiz-famille-tabouret-v4b" target="_blank">Idem 4 mais "en secours" sans surprise</a>
+          <span class="tag">Bouton 5 · v4b</span>
+        </article>
+      </section>
+    </header>
+    <footer>
+      <p>© 2025 · Quiz Famille Tabouret · index.html</p>
+    </footer>
+  </main>
+</body>
+</html>
